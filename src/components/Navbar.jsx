@@ -1,28 +1,45 @@
 import AppBar from "@mui/material/AppBar";
 import { Box, Button, Toolbar, Typography } from "@mui/material";
+import { Image } from "mui-image";
+import { motion } from "framer-motion";
+import PhotoIcon from "./PhotoIcon";
 
-const navItems = ["Home", "Resume", "Contact"];
+const navItems = ["About", "Resume", "Contact"];
 
 export default function Navbar() {
   return (
-    <AppBar position="static">
-      <Toolbar>
-        <Typography
-          variant="h6"
-          noWrap
-          component="div"
-          sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-        >
-          Bradley Gibbens
-        </Typography>
-        <Box sx={{ display: { xs: "none", sm: "block" } }}>
+    <Box sx={{ position: "relative" }}>
+      <Box
+        sx={{
+          position: "absolute",
+          top: -25,
+          left: -25,
+        }}
+      >
+        <PhotoIcon />
+      </Box>
+
+      <AppBar
+        position="static"
+        component={motion.div}
+        initial={{ width: 0 }}
+        animate={{ width: "100%" }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        sx={{
+          overflow: "hidden",
+          transformOrigin: "left center",
+          borderRadius: "0 50px 50px 0",
+        }}
+      >
+        <Toolbar>
+          <Typography variant="h6" sx={{ flexGrow: 1 }}></Typography>
           {navItems.map((item) => (
-            <Button key={item} sx={{ color: "#fff" }}>
+            <Button key={item} color="inherit">
               {item}
             </Button>
           ))}
-        </Box>
-      </Toolbar>
-    </AppBar>
+        </Toolbar>
+      </AppBar>
+    </Box>
   );
 }
