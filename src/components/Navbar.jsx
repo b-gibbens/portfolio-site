@@ -1,6 +1,5 @@
 import AppBar from "@mui/material/AppBar";
 import { Box, Button, Toolbar, Typography } from "@mui/material";
-import { Image } from "mui-image";
 import { motion } from "framer-motion";
 import PhotoIcon from "./PhotoIcon";
 
@@ -18,7 +17,7 @@ export default function Navbar() {
       >
         <PhotoIcon />
       </Box>
-
+      {/* <SpeechBubble /> */}
       <AppBar
         position="static"
         component={motion.div}

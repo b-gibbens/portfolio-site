@@ -10,9 +10,9 @@ export default function DevTimeCounter() {
   });
 
   useEffect(() => {
-    const updateDuration = () => {
+    const updateCounter = () => {
       const now = new Date();
-
+      
       let years = now.getFullYear() - startDate.getFullYear();
       let months = now.getMonth() - startDate.getMonth();
       let days = now.getDate() - startDate.getDate();
@@ -33,14 +33,14 @@ export default function DevTimeCounter() {
 
       setTimeElapsed({ years, months, days });
     };
-    updateDuration();
-    const interval = setInterval(updateDuration, 1000 * 60 * 60 * 24);
+    updateCounter();
+    const interval = setInterval(updateCounter, 1000 * 60 * 60 * 24);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <Typography component="span" sx={{ fontWeight: "bold", color: "#a18d0dff" }}>
-        {timeElapsed.years} years, {timeElapsed.months} months, and {timeElapsed.days} {timeElapsed.days == 1 ? "day" : "days" }
+    <Typography component="span" variant="body2" sx={{ fontWeight: "bold", color: "#a18d0dff" }}>
+        {timeElapsed.years} years, {timeElapsed.months} {timeElapsed.months == 1 ? "month" : "months" }, and {timeElapsed.days} {timeElapsed.days == 1 ? "day" : "days" }
     </Typography>
   )
 }
