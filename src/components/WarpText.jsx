@@ -43,6 +43,7 @@ export default function WarpText(props) {
   return (
     <Box
       onMouseEnter={startAnimation}
+      onClick={props.onClick}
       sx={{
         cursor: "pointer",
         position: "absolute",
@@ -65,7 +66,7 @@ export default function WarpText(props) {
           transition: "transform 0.5s ease",
           display: "inline-flex",
           gap: "0.05em",
-          "&:hover": { textShadow: "0 8px 20px rgba(255,255,255,0.4)", },
+          "&:hover": { textShadow: "0 8px 20px rgba(255,255,255,0.4)" },
         }}
       >
         {props.textContent.split("").map((ch, i) => {
