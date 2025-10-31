@@ -4,22 +4,63 @@ import resumePDF from "../assets/GibbensResume2025.pdf";
 
 export default function Resume() {
   return (
-    <Box sx={{ overflowX: "hidden", overflowY: "auto", maxHeight: "100%", maxWidth: "100%" }}>
-      <Typography>Here is some resume text.</Typography>
-      <a
-        href={resumePDF}
-        download="GibbensResume2025.pdf"
-        style={{ textDecoration: "none" }}
+    <Box
+      sx={{
+        width: "100%",
+        display: "flex",
+        flexDirection: { xs: "column", md: "row" },
+        alignItems: "flex-start",
+        justifyContent: "center",
+        gap: 3,
+        px: { xs: 2, md: 4 },
+      }}
+    >
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 2,
+          width: { xs: "100%", md: "30%" },
+        }}
       >
-        <Button variant="contained" sx={{ mt: 2 }}>
+        <Typography>
+          Here is some resume text. I'm going to write even more to see how it
+          handles text wrapping.
+        </Typography>
+        <Button
+          href={resumePDF}
+          download="GibbensResume2025.pdf"
+          variant="contained"
+          sx={{
+            backgroundColor: "#a18d0dff",
+            width: "200px",
+            alignSelf: "center",
+            "&:hover": { backgroundColor: "#c2a60fff" },
+          }}
+        >
           Download
         </Button>
-      </a>
-      <Image
-        src="src/assets/GibbensResume2025Image.png"
-        width="60%"
-        height="60%"
-      />
+      </Box>
+
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          borderRadius: 2,
+          pr: 1,
+          maxHeight: { xs: "30vh", md: "70vh" },
+          maxWidth: "700px",
+          overflowY: "auto",
+          width: { xs: "100%", md: "70%" },
+        }}
+      >
+        <Image
+          src="src/assets/GibbensResume2025Image.png"
+          style={{ width: "100%", height: "auto" }}
+          duration={300}
+          showLoading
+        />
+      </Box>
     </Box>
   );
 }

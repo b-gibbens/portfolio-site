@@ -14,7 +14,7 @@ const menuOptions = [
     skewY: "-15deg",
   },
   {
-    label: "RESUMÉ",
+    label: "RÉSUMÉ",
     top: "80px",
     left: "165px",
     rotateX: "0deg",
@@ -61,8 +61,8 @@ export default function RadialMenu(props) {
         zIndex: 2000,
       }}
       animate={{
-        x: isOpen ? "0vw" : "50vw",
-        y: isOpen ? "calc(90vh - 180px)" : "50vh",
+        x: isOpen ? "-20px" : "50vw",
+        y: isOpen ? "calc(90vh - 140px)" : "50vh",
         translateX: isOpen ? "0%" : "-50%",
         translateY: isOpen ? "0%" : "-50%",
         scale: isOpen ? 0.7 : 1,

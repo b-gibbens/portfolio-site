@@ -4,7 +4,7 @@ import Resume from "./Resume";
 import Contact from "./Contact";
 import More from "./More";
 
-const titles = ["ABOUT", "RESUMÉ", "CONTACT", "MORE..."];
+const titles = ["ABOUT", "RÉSUMÉ", "CONTACT", "MORE..."];
 
 export default function PageContents({ selectedIndex }) {
   const Content = [About, Resume, Contact, More][selectedIndex] ?? null;
@@ -28,16 +28,15 @@ export default function PageContents({ selectedIndex }) {
             width: "100%",
             minHeight: 300,
             display: "flex",
-            flexDirection: "row",
+            flexDirection: "column",
             gap: 3,
           }}
         >
-          <Box sx={{ flexBasis: "20%", flexShrink: 0, backgroundColor: "transparent" }} />
-          <Box sx={{ flexBasis: "80%", display: "flex", flexDirection: "column", gap: 3 }}>
+          <Box sx={{ flexBasis: "100%", display: "flex", flexDirection: "column", gap: 3 }}>
             <Typography
               variant="h4"
               fontWeight={700}
-              sx={{ textAlign: "left", mb: 2 }}
+              sx={{ textAlign: "center" }}
             >
               {title}
             </Typography>

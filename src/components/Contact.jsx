@@ -43,8 +43,8 @@ export default function Contact() {
     >
       <Stack spacing={2} textAlign="center" display="flex" justifyContent="center" alignItems="center">
         <input type="hidden" name="botcheck" />
-        <Typography variant="h6" mb={2} textAlign="center">
-          Get in touch.
+        <Typography variant="h6" textAlign="center">
+          Get in touch.  If you want.
         </Typography>
         <TextField fullWidth required name="name" label="Name" />
         <TextField fullWidth required name="email" label="Email" type="email" />
